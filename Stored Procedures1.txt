@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION 
+doc_type_req(type varchar, did integer) RETURNS integer AS $BODY$
+DECLARE
+  edno integer;
+  ret integer;
+BEGIN 
+  SELECT count(did) into ret FROM doctor WHERE type= 'type2';
+   return ret;
+END 
+$BODY$ LANGUAGE plpgsql; 
